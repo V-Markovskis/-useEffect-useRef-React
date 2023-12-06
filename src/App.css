@@ -23,3 +23,24 @@ body {
     height: 50px;
     border: 1px solid black;
 }
+
+.dropdown-menu.block {
+    opacity: 1;
+    display: block;
+}
+
+.dropdown-menu.none {
+    opacity: 0;
+    display: none;
+}
+
+/* PAGE TWO */
+
+.container-page-two {
+    margin-top: 50px;
+}
+
+.container-task-six {
+    border: 1px solid black;
+    padding: 10px;
+}

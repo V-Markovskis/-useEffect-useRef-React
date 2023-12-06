@@ -1,25 +1,18 @@
 import React, {useEffect, useState} from "react";
 
-const Task6 = () => {
+
+const Task7 = () => {
     const [count, setCount] = useState(0)
     const [text, setText] = useState('')
 
     useEffect(() => {
-        console.log('Render')
-    });
+        setCount(count + 100);
+    }, []);
 
     useEffect(() => {
-        console.log('First render')
-    },[])
-
-    useEffect(() => {
-        console.log('Changing count')
-    }, [count]);
-
-    useEffect(() => {
-        console.log('Input change')
+        document.title = text;
+        console.log('document.title = ', document.title)
     }, [text]);
-
     const handleClick = () => {
         setCount(count + 1);
     }
@@ -33,9 +26,9 @@ const Task6 = () => {
             <button className='btn btn-primary' onClick={handleClick}>+</button>
             <p>Count: {count}</p>
             <input onChange={handleChange} value={text}/>
-            <p>{text}</p>
+            <p style={{fontSize: count + 1}}>{text}</p>
         </div>
     )
 }
 
-export default Task6
+export default Task7

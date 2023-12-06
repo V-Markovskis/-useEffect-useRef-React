@@ -5,6 +5,7 @@ import React, {useState} from "react";
 //https://react-bootstrap.netlify.app/docs/components/dropdowns/
 const Task5 = () => {
     const[color, setColor] = useState('')
+    const[rectangles, setRectangles] = useState<string[]>([])
     const handleClick = (event: React.MouseEvent<HTMLElement, MouseEvent>, colorFromDropdown: string) => {
        event.preventDefault()
 
@@ -12,10 +13,15 @@ const Task5 = () => {
        setColor(colorFromDropdown)
     }
 
+    const addRectangle = () => {
+        setRectangles([...rectangles, color])
+        console.log('color', color)
+    }
+
     return (
         <>
             <div className='dropdown-container'>
-                <button className='btn btn-info'>+</button>
+                <button className='btn btn-info' onClick={addRectangle}>+</button>
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                         Color Dropdown
@@ -39,19 +45,20 @@ const Task5 = () => {
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+                {rectangles.map((color, key) => (
+                    <CreateRectangle key={key} color={color} />
+                ))}
             </div>
             <br/>
-            <div className='coloredBox' style={{backgroundColor: `${color}`}}></div>
+
         </>
     )
 }
 
-export default Task5
+const CreateRectangle = ({ color }: { color: string }) => {
+    return (
+        <div className='coloredBox' style={{backgroundColor: `${color}`}}></div>
+    )
+}
 
-//
-// <button className='btn btn-info'>+</button>
-// {' '}
-// <button className='btn btn-dark'>Color dropdown &#9660;</button>
-// <div className='dropdown-content'>
-//
-// </div>
+export default Task5
