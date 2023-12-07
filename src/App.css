@@ -36,11 +36,34 @@ body {
 
 /* PAGE TWO */
 
-.container-page-two {
+.container-page-two, .container-page-three {
     margin-top: 50px;
 }
 
-.container-task-six {
+.container-task-six, .box-task-ten, .task-ten-container {
     border: 1px solid black;
     padding: 10px;
+}
+
+/* PAGE THREE */
+
+.container-task-8, .container-task-9 {
+    display: flex;
+    gap: 10px;
+}
+
+.task-ten-container {
+    position: relative;
+    height: 200px;
+}
+
+/*.box-task10 {*/
+/*    position: relative;*/
+/*    float: right;*/
+/*}*/
+
+.button-task10 {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
 }

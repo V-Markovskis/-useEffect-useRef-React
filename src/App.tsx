@@ -7,6 +7,9 @@ import Task5 from "./components/pageOne/task5.tsx";
 import Task5SecondTry from "./components/pageOne/task5SecondTry.tsx";
 import Task6 from "./components/pageTwo/task6.tsx";
 import Task7 from "./components/pageTwo/task7.tsx";
+import Task8 from "./components/pageThree/task8.tsx";
+import Task9 from "./components/pageThree/task9.tsx";
+import Task10 from "./components/pageThree/task10.tsx";
 
 function App() {
 
@@ -37,6 +40,17 @@ function App() {
                 <br/>
                 <br/>
                 <Task7 />
+            </div>
+        </section>
+        <section>
+            <div className='container-page-three'>
+                <Task8 />
+                <br/>
+                <br/>
+                <Task9 />
+                <br/>
+                <br/>
+                <Task10 />
             </div>
         </section>
     </>
